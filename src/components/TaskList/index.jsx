@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DeleteIcon from "../../assets/images/delete_icon.svg";
+import AddIcon from "../../assets/images/add_icon.svg";
+
 import { lStorage } from "../../utilities/storage";
-import "../../assets/styles/tasklist.css";
+// import "../../assets/styles/tasklist.css";
 
 const TaskList = () => {
   const navigate = useNavigate();
-  const [taskList, setTaskList] = useState(lStorage.get("taskList"));
+  const [taskList, setTaskList] = useState(lStorage.get("taskList") ? lStorage.get("taskList") : []);
 
   const editTask = (data) => {
     navigate(`/create/${data.id}`, { state: { task: data } });
@@ -31,8 +33,10 @@ const TaskList = () => {
 
   return (
     <>
+{taskList?.length > 0 &&
+<>
+<h1 className="list_heading_text">Today's Task </h1>
       <div className="task_list_wrapper">
-        <p className="list_heading_text">Today's Task </p>
         {taskList &&
           taskList?.map((item) => {
             return (
@@ -66,6 +70,30 @@ const TaskList = () => {
             );
           })}
       </div>
+      </>}
+      {
+        taskList?.length <= 0 &&
+        <div  className="empty_task_wrapper">
+          <div className="empty_task_container">
+          <h1 className="empty_task_title">No Tasks Found</h1>
+          <h4 className="empty_task_sub_title">
+            Create New Tasks
+          </h4>
+          <img
+            src={AddIcon}
+            alt="win"
+            className="add_icon_image"
+            title="Create New Task"
+            style={{
+              paddingRight: "20px",
+              cursor: "pointer",
+              width:"50px"
+            }}
+            onClick={() => navigate("/create")}
+          />
+        </div>
+        </div>
+      }
     </>
   );
 };

@@ -1,83 +1,72 @@
 .view_task_wrapper {
   padding: 20px 60px;
+
   .view_task_title {
     padding: 15px 0px;
   }
+
   .action_container {
     margin-top: 4rem;
     display: flex;
+
     .back_btn {
+      align-items: center;
       padding: 0px 30px 0px 0px;
       cursor: pointer;
       display: flex;
+
       .back_icon_box {
         display: block;
-        height: 32px;
-        width: 35px;
-        background-color: black;
-        border-radius: 50%;
 
         .back_icon {
-          border-radius: 50%;
           display: block;
           position: relative;
-          top: 6px;
-          left: 7px;
-          height: 20px;
-          width: 20px;
+          width: 30px;
         }
       }
+
       .action_btn_text {
-        padding: 5px 0px 0px 10px;
+        padding: 5px 0px 0px 5px;
       }
     }
+
     .edit_btn {
       padding: 0px 30px 0px 0px;
       cursor: pointer;
-      display: flex;
+      @include flex_vertically_centered;
+
       .edit_icon_box {
         display: block;
-        height: 32px;
-        width: 35px;
-        background-color: #005981;
-        border-radius: 50%;
 
         .edit_icon {
-          border-radius: 50%;
           display: block;
           position: relative;
-          top: 6px;
-          left: 7px;
-          height: 20px;
-          width: 20px;
+          width: 25px;
         }
       }
+
       .action_btn_text {
-        padding: 5px 0px 0px 10px;
+        padding: 5px 0px 0px 5px;
       }
     }
+
     .delete_btn {
       cursor: pointer;
       display: flex;
+      align-items: center;
+
       .delete_icon_box {
         display: block;
-        height: 32px;
-        width: 35px;
-        background-color: #ff0000;
-        border-radius: 50%;
 
         .delete_icon {
-          border-radius: 50%;
           display: block;
           position: relative;
-          top: 6px;
-          left: 7px;
-          height: 20px;
-          width: 20px;
+          width: 25px;
         }
       }
+
       .action_btn_text {
-        padding: 5px 0px 0px 10px;
+        padding: 5px 0px 0px 5px;
       }
     }
   }

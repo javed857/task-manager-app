@@ -12,6 +12,7 @@ import AddIcon from "../assets/images/add_icon.svg";
 import UserImage from "../assets/images/user_image.svg";
 import config from "../assets/config";
 import axios from "axios";
+import AppIcon from ".././assets/images/app-icon.svg";
 
 function ResponsiveAppBar() {
   const navigate = useNavigate();
@@ -30,16 +31,7 @@ function ResponsiveAppBar() {
   }, []);
 
   return (
-    <AppBar
-      position="static"
-      className="header_container"
-      sx={{
-        backgroundColor: "#005981",
-        height: "100px",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <AppBar position="static" className="header_container">
       <Container maxWidth="l">
         <Toolbar disableGutters>
           <Typography
@@ -53,7 +45,7 @@ function ResponsiveAppBar() {
             }}
             className="app_icon_container"
           >
-            <span style={{color:"white", textDecoration:"none"}}>To Do</span>
+            <img src={AppIcon} alt="win" className="app_icon" />
           </Typography>
 
           <img
@@ -61,10 +53,6 @@ function ResponsiveAppBar() {
             alt="win"
             className="add_icon_image"
             title="Create New Task"
-            style={{
-              paddingRight: "20px",
-              cursor: "pointer",
-            }}
             onClick={() => navigate("/create")}
           />
           <Box sx={{ flexGrow: 0 }}>
@@ -73,19 +61,9 @@ function ResponsiveAppBar() {
                 <Avatar
                   alt="Remy Sharp"
                   src={UserImage}
-                  sx={{
-                    width: "68px",
-                    height: "68px",
-                  }}
+                  className="user_avatar"
                 />
-                <span
-                  style={{
-                    paddingLeft: "10px",
-                    color: "white",
-                  }}
-                >
-                 {userName}
-                </span>
+                <span className="user_name">{userName}</span>
               </IconButton>
             </Tooltip>
           </Box>

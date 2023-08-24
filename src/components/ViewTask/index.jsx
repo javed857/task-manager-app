@@ -1,10 +1,11 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { lStorage } from "../../utilities/storage";
-import Backbtn from "../../assets/images/back.jpg";
-import Editbtn from "../../assets/images/edit.jpg";
-import Deletebtn from "../../assets/images/delete.jpg";
-import "../../assets/styles/viewtask.css";
+import Backbtn from "../../assets/images/back.svg";
+import Editbtn1 from "../../assets/images/edit.svg";
+import Deletebtn from "../../assets/images/delete.svg";
+import testEdit from '../../assets/images/testedit.svg'
+// import "../../assets/styles/viewtask.css";
 
 const ViewTask = () => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const ViewTask = () => {
         </div>
         <div className="edit_btn" onClick={() => editTask(task)}>
           <span className="edit_icon_box">
-            <img src={Editbtn} alt="edit_icon" className="edit_icon" />
+            <img src={testEdit} alt="edit_icon" className="edit_icon" />
           </span>
           <span className="action_btn_text">Edit</span>
         </div>
